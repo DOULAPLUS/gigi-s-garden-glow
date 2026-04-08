@@ -86,40 +86,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services with Images */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-muted-foreground font-subheading mb-3">What We Do</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-              From Seed to <span className="italic text-primary">Sustenance</span>
-            </h2>
-          </div>
-
-          <div className="space-y-20 max-w-6xl mx-auto">
-            {services.map((service, i) => (
-              <div key={service.title} className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}>
-                <div className="md:w-1/2">
-                  <div className="overflow-hidden rounded-2xl shadow-soft">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      width={800}
-                      height={800}
-                      loading="lazy"
-                      className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                </div>
-                <div className="md:w-1/2">
-                  <h3 className="font-heading text-3xl font-semibold text-foreground mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground font-subheading text-lg leading-relaxed">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Featured Products */}
       <section className="section-sage py-20 md:py-28">
