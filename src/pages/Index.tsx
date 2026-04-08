@@ -4,6 +4,9 @@ import { Sprout, Heart, BookOpen, Droplets, Sun, Users, Leaf } from "lucide-reac
 import ProductCard from "@/components/ProductCard";
 import { products, wellnessServices } from "@/data/products";
 import heroImage from "@/assets/hero-farm.jpg";
+import juicingImg from "@/assets/juicing.jpg";
+import preservationImg from "@/assets/preservation.png";
+import educationImg from "@/assets/education.png";
 
 const Index = () => {
   const featured = products.filter(p => p.badge).slice(0, 4);
@@ -30,6 +33,35 @@ const Index = () => {
               <Link to="/wellness"><Button variant="hero-outline" size="xl" className="border-card text-card hover:bg-card hover:text-foreground">Explore Wellness</Button></Link>
               <Link to="/farm"><Button variant="hero-outline" size="xl" className="border-card text-card hover:bg-card hover:text-foreground">Visit the Garden</Button></Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-widest text-muted-foreground font-subheading mb-3">What We Do</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Grown With Purpose, <span className="italic text-primary">Shared With Love</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { img: juicingImg, title: "Fresh Juicing", description: "Cold-pressed juices and wellness beverages crafted from our farm-fresh produce, designed to nourish and heal." },
+              { img: preservationImg, title: "Food Preservation", description: "Canning, pickling, and preserving seasonal harvests so families can enjoy wholesome nutrition year-round." },
+              { img: educationImg, title: "Education & Outreach", description: "Workshops, youth programs, and community events that teach regenerative farming, nutrition, and wellness practices." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl overflow-hidden bg-card shadow-card hover:shadow-soft transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-2xl font-semibold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground font-subheading leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
