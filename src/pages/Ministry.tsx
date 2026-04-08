@@ -9,8 +9,9 @@ const areas = [
   { icon: <Users className="h-8 w-8" />, title: "Volunteer Opportunities", desc: "Join us in the garden, the kitchen, or the community — there's always room for willing hands." },
 ];
 
-const Ministry = () => (
-  <div className="py-16 md:py-24">
+const Ministry = () => {
+  const navigate = useNavigate();
+  return (
     <div className="container max-w-5xl">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Ministry & Community Outreach</h1>
@@ -28,10 +29,9 @@ const Ministry = () => (
         ))}
       </div>
       <div className="text-center">
-        <Button variant="hero" size="lg">Get Involved</Button>
+        <Button variant="hero" size="lg" onClick={() => navigate("/contact?subject=Get Involved - Ministry & Outreach")}>Get Involved</Button>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default Ministry;
