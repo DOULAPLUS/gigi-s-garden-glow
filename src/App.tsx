@@ -21,6 +21,8 @@ import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Policies from "./pages/Policies";
+import Values from "./pages/Values";
+import RiskLiability from "./pages/RiskLiability";
 import Cart from "./pages/Cart";
 import Auth from "./pages/Auth";
 import Checkout from "./pages/Checkout";
@@ -55,6 +57,8 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/policies" element={<Policies />} />
+                <Route path="/values" element={<Values />} />
+                <Route path="/risk-liability" element={<RiskLiability />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/checkout" element={<Checkout />} />

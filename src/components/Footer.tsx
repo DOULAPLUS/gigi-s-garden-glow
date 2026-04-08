@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Leaf, Mail, Phone, MapPin } from "lucide-react";
+import { Leaf, Mail, Phone, MapPin, Youtube } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -11,7 +11,7 @@ const Footer = () => (
             <span className="font-heading text-xl font-bold">Gigi's Garden</span>
           </div>
           <p className="text-primary-foreground/80 text-sm font-subheading leading-relaxed">
-            Nourishing body, spirit, and soil — one harvest at a time.
+            Groceries & Farm L3C — Nourishing body, spirit, and soil from the Delta South.
           </p>
         </div>
 
@@ -41,6 +41,8 @@ const Footer = () => (
               { label: "Events", to: "/events" },
               { label: "Ministry & Outreach", to: "/ministry" },
               { label: "Policies", to: "/policies" },
+              { label: "Our Values", to: "/values" },
+              { label: "Risk & Liability", to: "/risk-liability" },
             ].map(link => (
               <Link key={link.to} to={link.to} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 {link.label}
@@ -54,15 +56,20 @@ const Footer = () => (
           <div className="flex flex-col gap-3 text-sm text-primary-foreground/80">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span>hello@gigisgarden.com</span>
+              <a href="mailto:GigisGardenFarm@gmail.com" className="hover:text-primary-foreground transition-colors">GigisGardenFarm@gmail.com</a>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span>(555) 123-4567</span>
+              <a href="tel:2253678174" className="hover:text-primary-foreground transition-colors">(225) 367-8174</a>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              <span>Faith Valley, GA</span>
+            <div className="flex items-start gap-2">
+              <MapPin className="h-4 w-4 mt-0.5" />
+              <span>24477 Plank Road, Slaughter, LA 70777</span>
+            </div>
+            <div className="flex items-center gap-2 mt-2">
+              <a href="https://youtube.com/shorts/RT0QIgj1pmw?si=pRJYHEB0jesYdKAD" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                <Youtube className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -70,7 +77,7 @@ const Footer = () => (
 
       <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center">
         <p className="text-sm text-primary-foreground/60">
-          © {new Date().getFullYear()} Gigi's Garden Groceries & Wellness Farm. All rights reserved.
+          © {new Date().getFullYear()} Gigi's Garden Groceries & Farm L3C. All rights reserved.
         </p>
       </div>
     </div>
