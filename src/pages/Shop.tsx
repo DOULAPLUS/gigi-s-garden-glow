@@ -1,9 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
-import { products, categories } from "@/data/products";
+import { supabase } from "@/integrations/supabase/client";
+
+interface DBProduct {
+  id: string;
+  name: string;
+  price: number;
+  category: string;
+  image_url: string | null;
+  description: string | null;
+  badge: string | null;
+  in_stock: boolean;
+}
+
+const categories = [
+  "All Products",
+  "Produce Boxes",
+  "Juice Fleaux",
+  "Herbal Blends",
+  "Wellness Goods",
+  "Bundles",
+  "Vermiculture",
+];
 
 const Shop = () => {
   const [active, setActive] = useState("All Products");
+  const [products, setProducts] = useState<DBProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from("products")
+      .select("*")
+      .eq("in_stock", true)
+      .then(({ data }) => {
+        setProducts(data || []);
+        setLoading(false);
+      });
+  }, []);
+
   const filtered = active === "All Products" ? products : products.filter(p => p.category === active);
 
   return (
@@ -32,11 +67,26 @@ const Shop = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filtered.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center text-muted-foreground py-12">Loading products...</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filtered.map(product => (
+              <ProductCard
+                key={product.id}
+                product={{
+                  id: product.id,
+                  name: product.name,
+                  price: Number(product.price),
+                  category: product.category,
+                  image: product.image_url || "/placeholder.svg",
+                  description: product.description || "",
+                  badge: product.badge || undefined,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
