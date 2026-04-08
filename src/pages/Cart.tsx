@@ -50,7 +50,7 @@ const Cart = () => {
             <span className="font-heading text-3xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
           </div>
           <div className="flex gap-3">
-            <Button variant="hero" size="lg" className="flex-1">Proceed to Checkout</Button>
+            <Link to="/checkout"><Button variant="hero" size="lg" className="flex-1">Proceed to Checkout</Button></Link>
             <Button variant="outline" size="lg" onClick={clearCart}>Clear Cart</Button>
           </div>
         </div>
