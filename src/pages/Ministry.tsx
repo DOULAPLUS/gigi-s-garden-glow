@@ -1,5 +1,6 @@
 import { Church, Heart, Users, HandHeart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const areas = [
   { icon: <Church className="h-8 w-8" />, title: "Church Partnerships", desc: "We partner with local congregations to provide fresh food, wellness education, and healing events." },

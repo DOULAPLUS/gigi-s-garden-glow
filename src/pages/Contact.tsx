@@ -1,9 +1,18 @@
 import { Mail, Phone, MapPin, Clock, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Contact = () => {
+  const [searchParams] = useSearchParams();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  useEffect(() => {
+    const subject = searchParams.get("subject");
+    if (subject) {
+      setForm(prev => ({ ...prev, subject }));
+    }
+  }, [searchParams]);
 
   return (
     <div className="py-16 md:py-24">

@@ -1,5 +1,6 @@
 import { Heart, Music, Stethoscope, Baby, Wind } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   { icon: <Heart className="h-8 w-8" />, title: "Vital Touch Therapy", desc: "Therapeutic bodywork combining massage, energy healing, and intentional touch to restore balance and ease tension." },
