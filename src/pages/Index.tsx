@@ -4,27 +4,6 @@ import { Sprout, Heart, BookOpen, Droplets, Sun, Users, Leaf } from "lucide-reac
 import ProductCard from "@/components/ProductCard";
 import { products, wellnessServices } from "@/data/products";
 import heroImage from "@/assets/hero-farm.jpg";
-import juicingImg from "@/assets/juicing.jpg";
-import preservationImg from "@/assets/preservation.png";
-import educationImg from "@/assets/education.png";
-
-const services = [
-  {
-    title: "Fresh Juicing",
-    description: "Cold-pressed juices and wellness beverages crafted from our farm-fresh produce, designed to nourish and heal.",
-    image: juicingImg,
-  },
-  {
-    title: "Food Preservation",
-    description: "Canning, pickling, and preserving seasonal harvests so families can enjoy wholesome nutrition year-round.",
-    image: preservationImg,
-  },
-  {
-    title: "Education & Outreach",
-    description: "Workshops, youth programs, and community events that teach regenerative farming, nutrition, and wellness practices.",
-    image: educationImg,
-  },
-];
 
 const Index = () => {
   const featured = products.filter(p => p.badge).slice(0, 4);
