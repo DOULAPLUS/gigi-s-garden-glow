@@ -21,6 +21,8 @@ import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Policies from "./pages/Policies";
+import Values from "./pages/Values";
+import RiskLiability from "./pages/RiskLiability";
 import Cart from "./pages/Cart";
 import Auth from "./pages/Auth";
 import Checkout from "./pages/Checkout";
