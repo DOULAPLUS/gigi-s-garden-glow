@@ -1,5 +1,6 @@
 import { Heart, Music, Stethoscope, Baby, Wind } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   { icon: <Heart className="h-8 w-8" />, title: "Vital Touch Therapy", desc: "Therapeutic bodywork combining massage, energy healing, and intentional touch to restore balance and ease tension." },
@@ -9,8 +10,9 @@ const services = [
   { icon: <Wind className="h-8 w-8" />, title: "Movement & Breathwork", desc: "Gentle somatic movement and breathwork practices to release stress and reconnect body and spirit." },
 ];
 
-const Wellness = () => (
-  <div className="py-16 md:py-24">
+const Wellness = () => {
+  const navigate = useNavigate();
+  return (
     <div className="container max-w-5xl">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Wellness Services</h1>
@@ -24,12 +26,11 @@ const Wellness = () => (
             <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-5">{s.icon}</div>
             <h3 className="font-heading text-xl font-semibold mb-3">{s.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">{s.desc}</p>
-            <Button variant="gold" size="sm">Book Session</Button>
+            <Button variant="gold" size="sm" onClick={() => navigate(`/contact?subject=Book Session: ${s.title}`)}>Book Session</Button>
           </div>
         ))}
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default Wellness;
