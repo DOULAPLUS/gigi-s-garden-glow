@@ -21,7 +21,13 @@ const Index = () => {
         </div>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <p className="text-script text-3xl md:text-4xl text-farm-gold mb-2">From Soil to Soul</p>
+            <div className="mb-6">
+              <p className="inline-flex items-center rounded-full border-2 border-farm-gold/70 bg-farm-gold/18 px-6 py-3 text-script text-5xl md:text-6xl lg:text-7xl text-farm-gold shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-md md:px-9 md:py-4">
+                <span className="drop-shadow-[0_6px_18px_rgba(245,198,92,0.55)]">
+                  From Soil to Soul
+                </span>
+              </p>
+            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-card leading-[1.1] mb-6">
               Nourishing Families From Soil to Soul.
             </h1>
